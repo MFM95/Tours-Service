@@ -1,12 +1,12 @@
 package com.example.toursservice.application.models
 
 data class Tour(
-    val id: Long,
+    val id: Long? = null,
     val title: String,
     val mainPrice: String,
     val picture: String,
     val overview: String? = null,
-    val description: String? = null,
+    val description: String,
     val destination: String? = null,
     val duration: String? = null,
     val availability: String? = null,
