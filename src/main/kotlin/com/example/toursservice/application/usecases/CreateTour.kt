@@ -9,6 +9,6 @@ class CreateTour(
     private val repository: ToursRepository
 ) {
     fun execute(tour: Tour): Tour {
-        return repository.addTour(tour)
+        return repository.saveTour(tour)
     }
 }

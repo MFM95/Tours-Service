@@ -8,6 +8,10 @@ import java.time.LocalDateTime
 @Entity
 @Table(name = "tours")
 class TourEntity(
+    @Id
+    @SequenceGenerator(name = "baseSequence", sequenceName = "tours_id_seq", allocationSize = 1)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "baseSequence")
+    var id: Long? = null,
     val title: String,
     val destination: String?,
 
@@ -47,9 +51,4 @@ class TourEntity(
     @LastModifiedDate
     @Column(name = "updated_at")
     var updatedAt: LocalDateTime = LocalDateTime.now()
-) {
-    @Id
-    @SequenceGenerator(name = "baseSequence", sequenceName = "tours_id_seq", allocationSize = 1)
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "baseSequence")
-    val id: Long = 0
-}
+)
