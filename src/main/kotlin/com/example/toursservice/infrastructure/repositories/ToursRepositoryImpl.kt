@@ -26,7 +26,7 @@ class ToursRepositoryImpl(
         return toursDao.save(tour.toDbo()).toApplication()
     }
 
-    override fun deleteTour(tour: Tour): Tour {
-        TODO("Not yet implemented")
+    override fun deleteTour(tourId: Long) {
+        toursDao.deleteById(tourId)
     }
 }

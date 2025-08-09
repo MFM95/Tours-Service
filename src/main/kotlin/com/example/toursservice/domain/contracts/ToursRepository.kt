@@ -6,5 +6,5 @@ interface ToursRepository {
     fun getAllTours(): List<Tour>
     fun getTourById(id: Long): Tour?
     fun saveTour(tour: Tour): Tour
-    fun deleteTour(tour: Tour): Tour
+    fun deleteTour(tourId: Long)
 }
